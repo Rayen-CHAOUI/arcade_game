@@ -14,6 +14,7 @@ Réservé aux administrateurs, ce panneau de contrôle permet de gérer les util
     Rapports Statistiques.
     Génération de rapports visuels et graphiques sur les activités et performances des joueurs.
     Barre de Navigation.
+
 Contient des liens vers :
     Joueurs.
     Logs (journaux).
@@ -28,6 +29,7 @@ Ce panneau permet aux utilisateurs de :
     Inscription avec un nom d’utilisateur et une adresse email uniques.
     Connexion sécurisée pour les utilisateurs existants.
     Réinitialisation de mot de passe en cas d’oubli via email.
+    
 Modes de Jeu : 
     Après connexion, l’utilisateur accède à une page principale avec trois choix :
     Jouer contre la Machine – Affronter un adversaire automatique.

@@ -11,7 +11,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     
     if (User === adminCredentials.username && password === adminCredentials.password) {
         window.location.href = "dashboard.html";
-        // Vous pouvez ajouter une redirection ou une autre action ici
     } else {
         alert('Nom d utilisateur ou mot de passe incorrect !');
     }
@@ -30,7 +29,6 @@ function toggleDropdown() {
     }
 }
 
-// إغلاق القائمة عند النقر خارجها
 window.onclick = function(event) {
     const dropdownMenu = document.getElementById("dropdownMenu");
     const userAccount = document.querySelector(".user-account");
@@ -43,26 +41,22 @@ window.onclick = function(event) {
     }
 }
 
-// إظهار نافذة Préférences
 function showPreferences(event) {
-    event.preventDefault(); // منع تحميل الصفحة
+    event.preventDefault(); 
     const preferencesPopup = document.getElementById("preferencesPopup");
-    preferencesPopup.style.display = "flex"; // إظهار النافذة
+    preferencesPopup.style.display = "flex"; 
 }
 
-// إخفاء نافذة Préférences
 function hidePreferences() {
     const preferencesPopup = document.getElementById("preferencesPopup");
-    preferencesPopup.style.display = "none"; // إخفاء النافذة
+    preferencesPopup.style.display = "none"; 
 }
 
-// حفظ الإعدادات (وظيفة وهمية)
 function savePreferences() {
     alert("Préférences sauvegardées!");
     hidePreferences();
 }
 
-// إغلاق النافذة عند النقر خارجها
 window.onclick = function(event) {
     const preferencesPopup = document.getElementById("preferencesPopup");
     if (event.target === preferencesPopup) {
@@ -70,7 +64,7 @@ window.onclick = function(event) {
     }
 }
 
-// بيانات الطلاب (يمكن استبدالها ببيانات حقيقية من قاعدة البيانات)
+
 const etudiants = {
     etudiant1: {
         nom: "Ahmed Ali",
@@ -97,7 +91,6 @@ const etudiants = {
     }
 };
 
-// عرض تفاصيل الطالب
 function showDetails(etudiantId) {
     const etudiant = etudiants[etudiantId];
     const detailsContent = document.getElementById("detailsContent");
@@ -123,7 +116,6 @@ function showDetails(etudiantId) {
     document.getElementById("etudiantDetails").style.display = "block";
 }
 
-// بحث الطلاب
 function searchEtudiant() {
     const searchTerm = document.getElementById("searchBar").value.toLowerCase();
     const etudiantList = document.getElementById("etudiantList").getElementsByTagName("li");
