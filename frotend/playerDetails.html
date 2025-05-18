@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil du Joueur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #343541;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .profile-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .profile-header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .player-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .card-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1rem;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-row i {
+      color: #007bff;
+      margin-right: 10px;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .label {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+    }
+
+    .value {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .button-group button {
+      flex: 1;
+      padding: 0.8rem;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button-group button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <div class="profile-header">
+      <h1>Profil du Joueur</h1>
+    </div>
+
+    <div class="player-card" id="player-details">
+      <!-- Les infos seront insérées ici dynamiquement -->
+    </div>
+
+    <div class="button-group">
+      <button onclick="window.history.back()">← Retour</button>
+      <button onclick="envoyerInvitation()">🎯 Envoyer Invitation</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const playerData = JSON.parse(localStorage.getItem("selectedPlayer"));
+      const container = document.getElementById("player-details");
+
+      if (!playerData) {
+        container.innerHTML = "<p style='color: white;'>Aucune donnée disponible.</p>";
+        return;
+      }
+
+      const stats = [
+        { icon: "fa-user", label: "Nom d'utilisateur", value: playerData.username },
+        { icon: "fa-layer-group", label: "Niveau", value: playerData.level },
+        { icon: "fa-gamepad", label: "Parties Jouées", value: playerData.gamesPlayed },
+        { icon: "fa-trophy", label: "Parties Gagnées", value: playerData.gamesWon },
+        { icon: "fa-times-circle", label: "Parties Perdues", value: playerData.gamesLost }
+      ];
+
+      stats.forEach(stat => {
+        const row = document.createElement("div");
+        row.className = "card-row";
+        row.innerHTML = `
+          <div class="label"><i class="fas ${stat.icon}"></i> ${stat.label}</div>
+          <div class="value">${stat.value}</div>
+        `;
+        container.appendChild(row);
+      });
+    });
+
+    function envoyerInvitation() {
+  const playerData = JSON.parse(localStorage.getItem("selectedPlayer"));
+  if (!playerData) {
+    alert("Aucun joueur sélectionné.");
+    return;
+  }
+
+  // Exemple d'appel à une API pour envoyer l'invitation
+  fetch('/api/invitation', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ 
+      sender: localStorage.getItem("currentUsername"), // Remplace par l'utilisateur actuel
+      receiver: playerData.username,
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      alert(`Invitation envoyée à ${playerData.username} !`);
+    } else {
+      alert("Erreur lors de l'envoi de l'invitation.");
+    }
+  })
+  .catch(error => {
+    alert("Une erreur s'est produite. Veuillez réessayer.");
+    console.error('Erreur:', error);
+  });
+}
+
+  </script>
+</body>
+</html>

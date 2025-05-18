@@ -1,0 +1,102 @@
+/* Global reset and body styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: #3a3a3a;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1em;
+  color: #777;
+}
+
+/* Section and table styles */
+.section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  font-size: 1em;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #3498db;
+}
+
+td {
+  background-color: #fafafa;
+  color: #555;
+}
+
+tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+tr:hover td {
+  background-color: #f1f1f1;
+}
+
+tbody {
+  font-size: 0.9em;
+}
+
+/* Button styles (if any) */
+#connectButton {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#connectButton:hover {
+  background-color: #2980b9;
+}

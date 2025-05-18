@@ -1,0 +1,10 @@
+ "dependencies": {
+    "bcrypt": "^latest_version",
+    "cors": "^latest_version",
+    "dotenv": "^latest_version",
+    "express": "^latest_version",
+    "jsonwebtoken": "^latest_version",
+    "moment": "^latest_version",
+    "mongoose": "^latest_version",
+    "nodemailer": "^latest_version",
+  }

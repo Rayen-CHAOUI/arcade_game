@@ -1,0 +1,141 @@
+/* 🌟 General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #000000, #A8A5E6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+/* 🏠 Form Container */
+.form-container {
+    background: rgba(198, 205, 218, 0.829);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ✨ Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔥 Welcoming Text */
+.welcome-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin-bottom: 5px;
+}
+
+.welcome-subtext {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* 🔤 Input Groups */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.input-group i {
+    color: #FFD700;
+    margin-right: 10px;
+}
+
+input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+}
+
+/* 🎨 Button */
+button {
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #FFC107;
+}
+
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style du champ de mot de passe */
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Icônes des inputs */
+.input-group i {
+    color: #FFD700;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Icône "œil" pour afficher/masquer le mot de passe */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+.toggle-password:hover {
+    color: #FFD700;
+}
+
+
+#back{
+    justify-content: left;
+    align-items: first baseline;
+}
+
+#return{
+    color: blue;
+}
+#return:hover{
+    color: #9550e4;
+}

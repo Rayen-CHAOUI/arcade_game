@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bataille Navale</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎮 Bataille Navale</h1>
+
+        <div id="status" class="status">Votre tour !</div>
+
+        <div class="game-container">
+            <div class="player-container">
+                <h2>Votre Flotte</h2>
+                <div id="computer-grid" class="grid"></div>
+            </div>
+
+            <div class="computer-container">
+                <h2>Flotte Ennemie</h2>
+                <div id="player-grid" class="grid"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="restart" class="btn">Nouvelle Partie</button>
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <h2 id="popup-message"></h2>
+                <button onclick="location.reload()" class="btn">Rejouer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclusion du fichier JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

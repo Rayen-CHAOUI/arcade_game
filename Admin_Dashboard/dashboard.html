@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="user-account" onclick="toggleDropdown()">
+            <img src="image/avatar.png" alt="User Avatar" class="user-avatar"> 
+            <span class="username">Admin : CHAOUI Rayen</span> 
+            <span class="dropdown-arrow">▼</span>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#" class="dropdown-item" onclick="showPreferences(event)">Préférences</a>
+                <a href="../StartGame/welcomePage.html" class="dropdown-item">Déconnexion</a>
+            </div>
+        </div>
+    
+
+        <ul>
+
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="../WEB/index.html"><i class="fas fa-users"></i> Players</a></li>
+            <li><a href="../WEB/logs.html"><i class="fa-solid fa-file-lines"></i> Logs</a></li>
+            <li><a href="../WEB/addUser.html"><i class="fas fa-user-plus"></i> Add Player</a></li>
+            <li><a href="../WEB/removeUser.html"><i class="fas fa-user-minus"></i> Remove Player</a></li>
+            <li><a href="../WEB/report.html"><i class="fas fa-chart-line"></i> Reports</a></li>
+
+        </ul>
+        
+
+    </nav>
+
+ 
+    <div class="dashboard-container">
+        <h1 id="hid">👋 Welcome to the Admin Dashboard</h1>
+        <p id="pid">You're now logged in as an administrator.</p>
+    
+        <div class="admin-actions">
+            <h3>✨ What you can do:</h3>
+            <ul>
+                <li>📋 <strong>View all registered users</strong></li>
+                <li>📝 <strong>View all activities & logs</strong></li> 
+                <li>➕ <strong>Add new users</strong></li>
+                <li>❌ <strong>Remove existing users</strong></li>
+                <li>📊 <strong>View database statistics</strong></li>
+            </ul>
+            
+        </div>
+    </div>
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>

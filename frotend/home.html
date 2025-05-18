@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade - Sélection de Jeu</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="stylehome.css">
+</head>
+<body>
+
+    <div class="user-info">
+        <span id="welcome-message"></span>
+        <button class="logout-btn" onclick="logout()">Se Déconnecter</button>
+    </div>
+
+
+            <div class="search-container">
+                <input type="text" id="search-username" placeholder="Rechercher un joueur" oninput="showSuggestions()" />
+                <button onclick="searchPlayer()">Rechercher</button>
+            </div>
+
+            <ul id="suggestions-list" class="suggestions-list"></ul>
+
+
+
+    <div class="leaderboard">
+        <h2>Classement des Joueurs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Nom d'utilisateur</th>
+                    <th>Niveau</th>
+                    <th>Batailles jouées</th>
+                    <th>Batailles gagnées</th>
+                    <th>Batailles défaites</th>
+                </tr>
+            </thead>
+            <tbody id="players-list">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Bataille Navale</h1>
+            <p class="subtitle">Plongez dans l'univers du gaming rétro avec nos classiques réinventés</p>
+        </header>
+ 
+        <div class="game-list">
+            <a href="mainPage.html" class="game-card">
+                <i class="fas fa-ship"></i>
+                <span>Training</span>
+                <p class="coming-soon">Player vs Computer</p>
+            </a>
+
+            <a href="multiplayer.html" class="game-card">
+                <i class="fas fa-puzzle-piece"></i>
+                <span>Multiplayers</span>
+                <p class="coming-soon">Player 1 vs Player 2</p>
+            </a>
+
+            <a href="onlineGame.html" class="game-card">
+                <i class="fas fa-chess-queen"></i>
+                <span>Online</span>
+                <p class="coming-soon">Find games all around the world</p>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="right-sidebar">
+
+    
+        <div class="messages-section">
+            <h3>Messages</h3>
+            <ul id="message-list">
+                <!-- Exemples de messages -->
+                <li><strong>Player:</strong> Salut !</li>
+                <li><strong>Player:</strong> On joue ?</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="scripthome.js"></script>
+</body>
+</html>

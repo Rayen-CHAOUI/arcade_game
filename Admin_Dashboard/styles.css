@@ -1,0 +1,377 @@
+.login-page {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+ 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #40e0d0, #00bfff); /* رمادي داكن */
+    color: #fff;
+    padding: 10px 20px; /* زيادة المسافة من الجوانب */
+    text-align: left;
+    display: flex; /* لجعل العناصر في صف واحد */
+    align-items: center; /* محاذاة العناصر عموديًا */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-account {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* مسافة بين قسم المستخدم والقائمة */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور */
+}
+
+.user-avatar {
+    width: 30px; /* حجم صورة المستخدم */
+    height: 30px;
+    border-radius: 50%; /* لجعلها دائرية */
+    margin-right: 10px; /* مسافة بين الصورة واسم المستخدم */
+}
+
+.username {
+    font-size: 14px; /* حجم النص */
+    color: #808080; /* لون رمادي */
+    transition: color 0.3s; /* انتقال سلس لتغيير اللون */
+}
+
+.user-account:hover .username {
+    color: #fff; /* لون أبيض عند وضع الفأرة فوقها */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* لجعل العناصر في صف واحد */
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    color: #808080; /* لون رمادي */
+    text-decoration: none; /* إزالة الخط التحتي */
+    font-size: 14px;
+    transition: color 0.3s; /* إضافة انتقال سلس لتغيير اللون */
+}
+
+.navbar ul li a:hover {
+    color: #fff; /* لون أبيض عند وضع الفأرة فوقها */
+    text-decoration: none; /* التأكد من عدم ظهور خط تحتها */
+}
+
+.dashboard-container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#hid {
+    font-size: 28px;
+    color: #333;
+}
+
+#pid {
+    font-size: 18px;
+    color: #666;
+}
+
+.admin-actions {
+    margin-top: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+.admin-actions h3 {
+    font-size: 22px;
+    color: #444;
+}
+
+.admin-actions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-actions li {
+    font-size: 18px;
+    color: #555;
+    margin: 8px 0;
+}
+
+.admin-actions li strong {
+    color: #000;
+}
+
+
+/* تنسيق القائمة المنسدلة */
+.dropdown-menu {
+    display: none; /* إخفاء القائمة بشكل افتراضي */
+    position: absolute;
+    background-color: #444; /* لون الخلفية */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    margin-top: 10px;
+    z-index: 1000; /* التأكد من ظهور القائمة فوق العناصر الأخرى */
+}
+
+/* تنسيق القائمة المنسدلة */
+.dropdown-menu {
+    display: none; /* إخفاء القائمة بشكل افتراضي */
+    position: absolute;
+    top: 100%; /* تظهر أسفل العنصر الأب */
+    left: 0;
+    background-color: #444; /* لون الخلفية */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 1000; /* التأكد من ظهور القائمة فوق العناصر الأخرى */
+    min-width: 150px; /* عرض القائمة */
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px 20px;
+    color: #fff; /* لون النص */
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #555; /* لون الخلفية عند المرور */
+}
+
+/* تنسيق رمز الاتجاه */
+.dropdown-arrow {
+    font-size: 12px; /* حجم الرمز */
+    margin-left: 5px; /* مسافة بين اسم المستخدم والرمز */
+    transition: transform 0.3s; /* إضافة انتقال سلس للرمز */
+}
+
+/* تدوير الرمز عند ظهور القائمة */
+.user-account.active .dropdown-arrow {
+    transform: rotate(180deg); /* تدوير الرمز 180 درجة */
+}
+
+/* إظهار القائمة عند النقر */
+.user-account {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* محاذاة العناصر عموديًا */
+}
+
+/* تنسيق النافذة المنبثقة */
+.preferences-popup {
+    display: none; /* إخفاء النافذة بشكل افتراضي */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شبه شفافة */
+    z-index: 1001; /* التأكد من ظهور النافذة فوق كل شيء */
+    justify-content: center;
+    align-items: center;
+}
+
+.preferences-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* عرض النافذة */
+}
+
+.preferences-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.preferences-content label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.preferences-content select,
+.preferences-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.preferences-content button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.preferences-content button[type="button"]:first-child {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.preferences-content button[type="button"]:last-child {
+    background-color: #dc3545;
+    color: #fff;
+}
+.navbar ul li a {
+    color: #808080;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: flex; /* لجعل النص والأيقونة في صف واحد */
+    align-items: center; /* محاذاة النص والأيقونة عموديًا */
+}
+
+.navbar ul li a i {
+    margin-right: 8px; /* مسافة بين الأيقونة والنص */
+    font-size: 16px; /* حجم الأيقونة */
+}
+
+.navbar ul li a:hover {
+    color: #fff;
+}
+
+/* تنسيق قسم الطلاب */
+.etudiant-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.etudiant-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.etudiant-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.etudiant-list li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.etudiant-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.etudiant-details {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.etudiant-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#detailsContent {
+    font-size: 16px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <h2>User Registration Report</h2>
+    <canvas id="userChart" height="70"></canvas>
+
+    <h2>Log Activities</h2>
+    <div id="logDonut" style="width: 500px; height: 500px; display: flex; justify-content: center; align-items: center; margin: auto;">
+        <canvas id="logChart"></canvas>
+    </div>
+
+    <script>
+        async function fetchReportData() {
+            const response = await fetch("http://localhost:5000/report", {
+                headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+            });
+            const data = await response.json();
+            return data;
+        }
+
+        async function generateCharts() {
+            const data = await fetchReportData();
+
+            // Process user data for registrations over time
+            const userRegistrations = data.users.map(user => new Date(user.createdAt).toLocaleDateString());
+            const userCounts = userRegistrations.reduce((acc, date) => {
+                acc[date] = (acc[date] || 0) + 1;
+                return acc;
+            }, {});
+
+            const userChartCtx = document.getElementById('userChart').getContext('2d');
+
+            new Chart(userChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(userCounts),
+                    datasets: [{
+                        label: 'User Registrations',
+                        data: Object.values(userCounts),
+                        backgroundColor: 'blue'
+                    }]
+                }
+            });
+
+            // Process log data
+            const logActions = data.logs.map(log => log.action);
+            const logCounts = logActions.reduce((acc, action) => {
+                acc[action] = (acc[action] || 0) + 1;
+                return acc;
+            }, {});
+
+
+            const logChartCtx = document.getElementById('logChart').getContext('2d');
+            new Chart(logChartCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(logCounts),
+                    datasets: [{
+                        label: 'Log Activities',
+                        data: Object.values(logCounts),
+                        backgroundColor: ['red', 'green', 'blue', 'yellow', 'purple']
+                    }]
+                },
+            });
+        }
+
+        generateCharts();
+    </script>
+</body>
+</html>

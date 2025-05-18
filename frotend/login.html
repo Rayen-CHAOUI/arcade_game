@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="styling.css">
+    <script src="app.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="form-container">
+
+        <a id="return" href="../StartGame/welcomePage.html">Return to Main Page</a>
+
+        <h1 class="welcome-text">Bienvenue sur Arcade 🎮</h1>
+        <p class="welcome-subtext">Connectez-vous pour profiter de l'expérience ultime</p>
+
+        <h2>Connexion</h2>
+        
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input id="username" type="text" placeholder=" Nom d'utilisateur">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input id="password" type="password" placeholder=" Mot de passe">
+            <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+        </div>                      
+
+        <button onclick="login(
+            document.getElementById('username').value, 
+            document.getElementById('password').value
+        )">Se connecter</button>
+
+        <p>Pas encore de compte ? <a href="signup.html">S'inscrire</a></p>
+        <p><a href="request-reset.html">Mot de passe oublié ?</a></p>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            const toggleIcon = document.querySelector(".toggle-password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        }
+    </script>
+
+</body>
+</html>

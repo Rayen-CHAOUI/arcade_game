@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs Administrateur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Les actvitées Log des utilisateurs et admin</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th> <!-- Auto-increment index -->
+                <th>Nom d'utilisateur</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="logsTable">
+            <tr>
+                <td colspan="4" style="text-align: center;">Chargement des logs...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        async function fetchLogs() {
+            try {
+                const response = await fetch("http://localhost:5000/adminlogs");
+                if (!response.ok) throw new Error("Erreur lors de la récupération des logs.");
+                const logs = await response.json();
+    
+                const logsTable = document.getElementById("logsTable");
+                logsTable.innerHTML = "";
+    
+                logs.forEach((log, index) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${index + 1}</td> 
+                        <td>${log.user?.username || "Inconnu"}</td>
+                        <td>${log.user?.email || "Non défini"}</td>
+                        <td>${new Date(log.timestamp).toLocaleString()}</td>
+                        <td>${log.action}</td>
+                    `;
+                    logsTable.appendChild(row);
+                });
+    
+            } catch (error) {
+                console.error("Erreur :", error);
+                document.getElementById("logsTable").innerHTML = `
+                    <tr><td colspan="5" style="text-align: center; color: red;">Impossible de charger les logs.</td></tr>
+                `;
+            }
+        }
+    
+        fetchLogs();
+    </script>
+    
+
+</body>
+</html>
