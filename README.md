@@ -59,6 +59,13 @@ Un **classement en direct** est affiché à gauche de l’écran selon les score
 
 ---
 
+##  **Technologies utilisées**
+
+- **Frontend** : HTML, CSS, JavaScript
+- **Backend** : Node.js, Express.js
+- **Base de Données** : MongoDB
+- **Multijoueur Temps Réel** : Socket.IO
+
 ##  Schéma Utilisateur (MongoDB)
 
 ```js
@@ -75,14 +82,4 @@ const UserSchema = new mongoose.Schema({
   resetTokenExpire: { type: Date, default: null },
 });
 
---- 
-
-##  **Technologies utilisées**
-
-- **Frontend** : HTML, CSS, JavaScript
-- **Backend** : Node.js, Express.js
-- **Base de Données** : MongoDB
-- **Multijoueur Temps Réel** : Socket.IO
-
-## **Auteur**
-CHAOUI Rayen
+```
