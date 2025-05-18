@@ -75,7 +75,7 @@ const UserSchema = new mongoose.Schema({
   resetTokenExpire: { type: Date, default: null },
 });
 
----
+--- 
 
 ##  **Technologies utilisées**
 
